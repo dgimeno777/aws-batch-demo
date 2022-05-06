@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  wait_service:
+    image: "${WAIT_SERVICE_REPO_URI}:latest"
+    command: poetry run python -m wait
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
